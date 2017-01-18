@@ -23,8 +23,8 @@ sed -i  "s/example.com/"${HOSTNAME}"/g" /etc/krb5.conf
 echo "............Updating kdc.conf file............"
 sed -i "s/EXAMPLE.COM/"${HOSTNAME^^}"/g" /var/kerberos/krb5kdc/kdc.conf
 
-sed -i 's/dict_file/a max_life = 1d/g' /var/kerberos/krb5kdc/kdc.conf
-sed -i  's/dict_file/a max_renewable_life = 7d/g' /var/kerberos/krb5kdc/kdc.conf
+sed -i 's/dict_file/max_life = 1d/g' /var/kerberos/krb5kdc/kdc.conf
+sed -i  's/dict_file/max_renewable_life = 7d/g' /var/kerberos/krb5kdc/kdc.conf
 
 
 echo "............Updating kadmn.acl............"
